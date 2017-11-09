@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/project.css">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-route.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("mainApp", ["ngRoute"]);
+        app.controller("mainCtrl", ["$scope", function($scope) {
+
+        }])
+        app.config(["$routeProvider", function($routeProvider){
+            $routeProvider.when("/login", {
+                templateUrl: "template/login.html",
+                controller: "loginCtrl"
+            }).when("/menu", {
+                templateUrl: "template/menu.html",
+                controller: "menuCtrl"
+            }).otherwise({
+                redirectTo: "/"
+            })
+        }]);
+        app.controller("loginCtrl", ["$scope", "$http", "$location", function($scope, $http, $location){
+            $scope.loginState = false;
+            $scope.doSubmit = function() {
+                $http.post("/ds/u", $scope.data).then(function(res){
+                    if(res.data.successful == "true"){
+                        $location.path("/menu")
+                    }
+                    else {
+                        $scope.loginState = true
+                    }
+                })
+            }
+            $scope.pasGrade = function () {
+                var size = $scope.data.password.length
+                if(size > 8){
+                    $scope.strength = 'strong'
+                }
+                else {
+                    $scope.strength = 'weak'
+                }
+            }
+        }])
+        app.controller("menuCtrl", ["$scope", "$http", function($scope, $http){
+            $http.get("/ds").then(function (res) {
+//                console.log(res)
+                $scope.menuList = res.data
+            })
+
+            $scope.changeIcon = function ($index) {
+                $http.put("/ds", {index: $index}).then(function (res) {
+                    // console.log(res.data)
+                    $scope.menuList = res.data
+                    
+                })
+            }
+        }])
+    </script>
+</head>
+<body ng-app="mainApp">
+<div ng-controller="mainCtrl">
+    <div>
+        <div class="div div-nav" id="nav-1">
+            <a class="a-nav-1" href="#menu">OUR MENU</a>
+            <a class="a-nav-1" href="#home">OUR PLANS</a>
+            <a class="a-nav-1" href="#home">OUR MISSION</a>
+        </div>
+        <div id="nav-2">
+            <a class="a-nav-2" href="#login">Login</a>
+            <button id="btn-signup">SIGN UP</button>
+        </div>
+    </div>
+    <hr>
+    <div ng-view></div>
+</div>
+</body>
+</html>

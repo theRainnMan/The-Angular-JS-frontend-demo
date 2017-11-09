@@ -1,0 +1,174 @@
+
+#nav-1{
+    margin-left: 10%;
+}
+
+#nav-2{
+    float: right;
+    margin-right: 10%;
+}
+
+#nav-1, #nav-2{
+    display: inline;
+}
+
+a.a-nav-1 {
+    color: black;
+    padding: 20px;
+}
+
+a.a-nav-2 {
+    color: green;
+    padding: 20px;
+}
+
+#btn-signup {
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#login {
+    text-align: center;
+}
+
+#btn-facebook {
+    width:100%;
+    background-color: #3b5998;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /*margin: 4px 2px;*/
+    cursor: pointer;
+}
+
+#btn-submit {
+    width: 100%;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#p-pass, #b-sign {
+    display: inline-block;
+}
+
+#p-or {
+    text-align: center;
+}
+
+#p-pres {
+    text-align: center;
+}
+
+#h-order {
+    text-align: center;
+    font-weight: bold;
+}
+
+#div-menu-main{
+    margin-top: 60px;
+}
+
+#title-1 {
+    text-align: center;
+}
+
+#p-menu {
+    text-align: center;
+}
+
+#form-main{
+    width:100%;
+    float:left;
+    padding-top:0px;
+}
+
+#form-div {
+    background-color:rgba(72,72,72,0.4);
+    padding-left:35px;
+    padding-right:35px;
+    padding-top:35px;
+    padding-bottom:50px;
+    width: 450px;
+    float: left;
+    left: 50%;
+    position: absolute;
+    margin-top:30px;
+    margin-left: -260px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+
+#div-menu-1 {
+    box-sizing: border-box;
+    max-width:100%;
+    display: inline-block;
+    padding: 5px;
+}
+
+@media screen and (max-width: 699px) {
+    #div-menu-1 {
+        box-sizing: border-box;
+        max-width: 100%;
+        padding: 5px;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 699px) and (min-width: 520px) {
+    #div-menu-1 {
+        box-sizing: border-box;
+        max-width: 50%;
+        padding: 5px;
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    #div-menu-1 {
+        box-sizing: border-box;
+        padding: 5px;
+        max-width: 25%;
+        display: inline-block;
+    }
+}
+
+#form-main input{
+    /*background-color: magenta !important;*/
+    /*color:magenta !important;*/
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+    border-radius: 5px;
+    border-color:#888;
+    border-width: 1px;
+    width:100%;
+    height:30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rating-static {
+    width: 60px;
+    height: 16px;
+    display: block;
+    background: url('http://www.itsalif.info/blogfiles/rating/star-rating.png') 0 0 no-repeat;
+}
+
+.rating-5 { background-position: 0 0; }
+.rating-4 { background-position: -12px 0; }
+.rating-3 { background-position: -24px 0; }
+.rating-2 { background-position: -36px 0; }
+.rating-1 { background-position: -48px 0; }
+.rating-0 { background-position: -60px 0; }

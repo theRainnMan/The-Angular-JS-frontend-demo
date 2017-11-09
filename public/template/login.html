@@ -1,0 +1,28 @@
+<div id="form-main">
+    <div id="form-div">
+        <form class="form" id="form1" autocomplete="off">
+            <h1 id="login">Log in</h1>
+                <button type="button" id="btn-facebook">Login with facebook</button>
+            <p id="p-or">or</p>
+            <p class="email">
+                <label class="lb-1">Email</label>
+                <div>
+                    <input type="email" name="email" ng-model="data.email" required id="email" autocomplete="off">
+                </div>
+            </p>
+            <p class="password">
+                <label class="lb-1">Password</label>
+                <div>
+                    <input type="password" ng-minlength="6" ng-model="data.password" name="password" required id="password">
+                </div>
+            </p>
+            <p id="p-for"><a ng-href="/forgot">Forgot Password?</a></p>
+            <button ng-click="doSubmit()" id="btn-submit">LOG IN</button>
+            <div class="submit">
+                <p id="p-pass">Don't have an account? </p>
+                <b id="b-sign"><a ng-href="/sign">Sign up here</a></b>
+            </div>
+            <p ng-if="loginState">Error email or password</p>
+        </form>
+    </div>
+</div>

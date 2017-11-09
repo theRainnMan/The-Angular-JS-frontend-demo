@@ -1,0 +1,23 @@
+<h1 id="title-1">Our Menu</h1>
+<p id="p-menu">We don't change the menu on you every week - your favorites are always available and we add two new dishes every two weeks.</p>
+<div id="div-menu-main">
+    <div ng-repeat="menu in menuList track by $index" id="div-menu-1">
+        <div id="div-menu-2">
+            <div>
+                <header id="h-order">{{ menu.orderName }}</header>
+                <p id="p-pres">{{ menu.prescription }}</p>
+            </div>
+            <div>
+                <img style="width:100%" src="{{ menu.picUrl }}">
+            </div>
+            <div ng-if="!menu.fav">
+                <img src="../pic/favorite-ori.png" ng-click="changeIcon($index)">
+            </div>
+            <div ng-if="menu.fav">
+                <img src="../pic/favorite.png" ng-click="changeIcon($index)">
+            </div>
+            <input ng-model="menu.grade" type="number" max="5" min="0" required>
+            <span class="rating-static rating-{{menu.grade}}"></span>
+        </div>
+    </div>
+</div>
